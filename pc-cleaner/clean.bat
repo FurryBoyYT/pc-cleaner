@@ -107,10 +107,11 @@ if errorlevel 1 (
 )
 
 :: Roblox Cleaners
+echo [~] Cleaning Roblox temp files...
+call :clean_dir "Roblox capture cache" "%localappdata%\Roblox\tmp-capture-storage"
 call :clean_dir "Roblox logs" "%localappdata%\Roblox\logs"
 call :clean_dir "Roblox downloads" "%localappdata%\Roblox\Downloads"
 call :clean_dir "Roblox http cache" "%localappdata%\Roblox\rbx-storage"
-echo [~] Cleaning other Roblox files...
 del /f /s /q "C:\Users\bogda\AppData\Local\Roblox\rbx-storage.db" >nul 2>&1
 del /f /s /q "C:\Users\bogda\AppData\Local\Roblox\rbx-storage.db-shm" >nul 2>&1
 del /f /s /q "C:\Users\bogda\AppData\Local\Roblox\rbx-storage.db-wal" >nul 2>&1
@@ -118,15 +119,7 @@ del /f /s /q "C:\Users\bogda\AppData\Local\Roblox\rbx-storage.id" >nul 2>&1
 del /f /s /q "C:\Users\bogda\AppData\Local\Roblox\server.rbxl" >nul 2>&1
 call :clean_dir "Bloxstrap downloads" "%localappdata%\Bloxstrap\Downloads"
 call :clean_dir "Bloxstrap logs" "%localappdata%\Bloxstrap\Logs"
-
-:: Roblox Cookie and Cache Cleaners
-call :clean_dir "Roblox browsercookie" "%localappdata%\Roblox\browsercookie"
-call :clean_dir "Roblox cookies" "%appdata%\Roblox\cookies"
 call :clean_dir "Roblox UWP Cookies" "%localappdata%\Packages\ROBLOXCORPORATION.ROBLOX_55nm5eh3cm0pr\AC\Cookies"
-call :clean_dir "RobloxCookies.dat" "%localappdata%\Roblox\RobloxCookies.dat"
-call :clean_dir "RobloxBrowserCache" "%localappdata%\Roblox\RobloxBrowserCache"
-call :clean_dir "Roblox http" "%localappdata%\Roblox\http"
-call :clean_dir "Roblox logs" "%localappdata%\Roblox\logs"
 call :clean_dir "Roblox LocalStorage" "%localappdata%\Roblox\LocalStorage"
 
 :: System Maintenance
